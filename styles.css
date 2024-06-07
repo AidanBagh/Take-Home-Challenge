@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; 
+    color: #fff;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 20px; 
+}
+
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 20%;
+    height: 300px;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s, filter 0.3s;
+    position: relative;
+    flex: 1 1 calc(25% - 20px); 
+    box-sizing: border-box;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: filter 0.3s;
+}
+
+.card .info {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+    background-color: transparent; 
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: filter 0.3s; 
+}
+
+.card h2, .card .country, .card .know-more {
+    margin: 0;
+    padding: 5px 0;
+}
+
+.card .country, .card .know-more {
+    display: none;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover img {
+    filter: blur(4px); 
+}
+
+.card:hover .country, .card:hover .know-more {
+    display: block;
+}
+
+.card .know-more {
+    margin-top: 10px;
+    color: rgb(18, 207, 241); 
+    text-decoration: none;
+}
+
+.card .know-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+    .card {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 calc(100% - 20px); 
+    }
+}
